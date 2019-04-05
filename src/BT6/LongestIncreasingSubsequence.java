@@ -1,26 +1,28 @@
 package BT6;
 
 public class LongestIncreasingSubsequence {
-    public void findSubsequence(int[] arrA) {
+
+    public static void findSubsequence(int[] arrA) {
         int[] LIS = new int[arrA.length];
         for (int i = 0; i < arrA.length; i++) {
             int max = -1;
             for (int j = 0; j < i; j++) {
-// check if previous elements > current element
+                // kiem tra neu phan tu truoc > phan tu hien tai
                 if (arrA[i] > arrA[j]) {
-// update the max from the previous entries
+                    // cap nhat max
                     if (max == -1 || max < LIS[j] + 1) {
                         max = 1 + LIS[j];
                     }
                 }
             }
             if (max == -1) {
-// means none of the previous element has smaller than arrA[i]
+                // khong co phan tu nao nho hon arrA[i]
                 max = 1;
             }
             LIS[i] = max;
         }
-// find the max in the LIS[]
+
+        // tim Max trong mang LIS[]
         int result = -1;
         int index = -1;
         for (int i = 0; i < LIS.length; i++) {
@@ -29,8 +31,9 @@ public class LongestIncreasingSubsequence {
                 index = i;
             }
         }
-// Print the result
-// Start moving backwards from the end and
+
+
+        //In ra ket
         String path = arrA[index] + " ";
         int res = result - 1;
         for (int i = index - 1; i >= 0; i--) {
@@ -39,17 +42,13 @@ public class LongestIncreasingSubsequence {
                 res--;
             }
         }
-        System.out.println("Longest Increasing subsequence: " + result);
-        System.out.println("Actual Elements: " + path);
+        System.out.println("Do dai day con tang dai nhat: " + result);
+        System.out.println("Cac phan tu trong day: " + path);
     }
 
     public static void main(String[] args) {
-//        int[] A = {1, 12, 7, 0, 23, 11, 52, 31, 61, 69, 70, 2};
+
         int[] A = {2, 5, 4, 6, 3, 8, 9, 7};
-        LongestIncreasingSubsequence i = new LongestIncreasingSubsequence();
-        i.findSubsequence(A);
-        int[] B = {3, 4, 5, 6};
-        String o = B[0] +" "+ B[1];
-        System.out.println(o);
+        findSubsequence(A);
     }
 }
