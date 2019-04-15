@@ -18,7 +18,7 @@ public class KnapsackProblem01 {
 
     static void init() {
         try {
-            Scanner scanner = new Scanner(new File("C:\\Users\\ANHTDAM\\IdeaProjects\\algorithms-design-analysis\\src\\input.txt"));
+            Scanner scanner = new Scanner(new File("/Users/anhtd/Documents/JavaPrograms/AlgorithmDesgin&Analysis/src/tlgk_branch_and_bound/input.txt"));
             while (scanner.hasNext()) {
                 n = scanner.nextInt();
                 M = scanner.nextInt();

@@ -21,7 +21,7 @@ public class KnapsackProblem {
 
     static void init() {
         try {
-            Scanner scanner = new Scanner(new File("C:\\Users\\ANHTDAM\\IdeaProjects\\algorithms-design-analysis\\src\\input.txt"));
+            Scanner scanner = new Scanner(new File("/Users/anhtd/Documents/JavaPrograms/AlgorithmDesgin&Analysis/src/tlgk_branch_and_bound/input.txt"));
             while (scanner.hasNext()){
                 n = scanner.nextInt();
                 m = scanner.nextInt();
@@ -62,7 +62,7 @@ public class KnapsackProblem {
             if (j == 1) {
                 b = vsel + value[i] + wrem * value[i + 1] / (float) weight[i + 1];
                 if (b >= vmax) {
-                    x[i] = j;
+                    x[i] = 0;
                     vsel = vsel - value[i];
                     wrem = wrem + weight[i];
                 }
@@ -89,11 +89,14 @@ public class KnapsackProblem {
                 System.out.print(i + "\t");
             }
         }
-//        for (i = 1; i <= n; i++) {
-//            if (y[i] != 0) {
-//                System.out.print(y[i] + "\t");
-//            }
-//        }
+
+        System.out.println();
+
+        for (i = 1; i <= n; i++) {
+            if (y[i] != 0) {
+                System.out.print(y[i] + "\t");
+            }
+        }
     }
 
     public static void main(String[] args) {
