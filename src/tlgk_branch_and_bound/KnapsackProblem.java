@@ -35,8 +35,8 @@ public class KnapsackProblem {
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
-        value[n + 1] = 0;
-        weight[n + 1] = 1;
+        value[n + 1] = 0;   //xu li truong hop can nang toi da cua balo la 1
+        weight[n + 1] = 1;  //xu li truong hop can nang toi da cua balo la 1
         vmax = 0;
         wrem = m;
         vsel = 0;
